@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <ng-container *ngIf="form">
+    <form [formGroup]="form" (ngSubmit)="onEdit()" *ngIf="!isLoading">
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          name="name"
+          formControlName="name"
+          placeholder="Name"
+        />
+        <mat-error *ngIf="form.get('name')?.invalid"
+          >Enter a valid name</mat-error
+        >
+      </mat-form-field>
+      <button mat-raised-button color="warn" type="submit">send</button>
+    </form>
+  </ng-container>
+</mat-card>

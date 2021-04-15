@@ -1,0 +1,21 @@
+1: برای ذخیره سازی اتوماتیک :
+  File > auto save
+
+2: برای ساخت یک کامپوننت در cli
+  ng g c dir/nameOfCompoent --module app --skip-tests
+
+3: غیر فعال کردن خطای مقدار اولیه برای متغییرها
+  "strictPropertyInitialization": false in  tsconfig.json
+
+4:برای اینکه دکمه انتخاب عکس قشنگ باشه
+    <button mat-stroked-button type="button" (click)="filePicker.click()">Pick Image</button>
+    <input type="file" #filePicker>  // یک رفرنس است که بقیه میتونن ازش استفاده کنن
+
+5: وقتی میخواهیم بگویم برو به فلان صفحه
+     this.router.navigate(['/'])
+
+6: برای محافظت از صفحه در صورت لاگین شدن
+    canActivate:[AuthGuard] در app-routing.module.ts and atuh.guard activated
+
+7 : وقتی میخوایم یک کاری برای کل پروژه اعمال بشه
+   interceptor

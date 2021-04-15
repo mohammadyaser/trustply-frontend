@@ -1,0 +1,28 @@
+<mat-card *ngIf="vfCode">
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form
+    (submit)="onSignupConfirm(confirmForm)"
+    #confirmForm="ngForm"
+    *ngIf="!isLoading"
+  >
+    <mat-form-field>
+      <input
+        matInput
+        name="verifyCode"
+        ngModel
+        type="text"
+        placeholder="verify code"
+        #confirmInput="ngModel"
+        required
+      />
+      <mat-error *ngIf="confirmInput.invalid">Please enter verifyCode</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="warn" type="submit" *ngIf="!isLoading">
+      confirm
+    </button>
+  </form>
+</mat-card>
+
+<div *ngIf="vfCode">
+  <p class="info-text mat-body-2">Verify Code : {{ vfCode }}</p>
+</div>
