@@ -36,4 +36,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.authListenerSubs.unsubscribe();
   }
+  onSearchChange(searchValue){
+    this.userService.search(searchValue);
+  }
 }

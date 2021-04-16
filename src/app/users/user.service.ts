@@ -74,4 +74,14 @@ export class UserService {
         this.poking.next(countPoking)
       });
   }
+  search(keywords) {
+    this.http
+      .get(`http://localhost:92/api/users/search?keyword=${keywords}`)
+      .subscribe((response: any) => {
+        this.users = response?.result;
+        let userId = localStorage.getItem('userId');
+        // this.users = this.users.filter((user) => user.id != userId);
+        this.usersUpdated.next([...this.users]);
+      });
+  }
 }
